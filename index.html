@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Galería de Coches - Demo para clase</title>
+  <style>
+    /* Estilos mínimos, todo dentro del HTML */
+    body{font-family: Arial, Helvetica, sans-serif;margin:0;padding:0;background:#f4f6f8;color:#222}
+    header{background:#0b5; padding:20px;text-align:center}
+    header h1{margin:0;font-size:1.6rem}
+    main{padding:18px;max-width:1000px;margin:0 auto}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+    .card{background:#fff;border-radius:8px;padding:12px;box-shadow:0 1px 3px rgba(0,0,0,0.08)}
+    .art{width:100%;height:120px;border-radius:6px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#e6eef3,#dfeef0);margin-bottom:10px}
+    .art svg{width:90%;height:90%}
+    h2{font-size:1.05rem;margin:6px 0}
+    p.small{margin:4px 0;font-size:0.9rem;color:#555}
+    table{width:100%;border-collapse:collapse;margin-top:8px}
+    td,th{padding:6px;border-bottom:1px solid #eee;text-align:left;font-size:0.9rem}
+    footer{text-align:center;padding:14px;color:#666;font-size:0.9rem}
+    .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+    .note{background:#fff7cc;padding:8px;border-radius:6px;margin-bottom:12px}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Galería de Coches — Demo para la clase</h1>
+  </header>
+
+  <main>
+    <div class="note">Página <strong>solo HTML</strong> para mostrar estructuras básicas: tarjetas, tablas y contenido. Sin JavaScript.</div>
+
+    <section class="filters">
+      <!-- Simulación de filtros (estáticos) -->
+      <div class="card" style="padding:8px;min-width:140px">Filtro: <strong>Todos</strong></div>
+      <div class="card" style="padding:8px;min-width:140px">Tipo: <strong>TODOS</strong></div>
+    </section>
+
+    <section class="grid">
+      <!-- Coche 1 -->
+      <article class="card">
+        <div class="art" aria-hidden="true">
+          <!-- SVG simple de un coche -->
+          <svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="imagen coche compacto">
+            <rect x="6" y="20" width="108" height="22" rx="6" fill="#7db9ff"/>
+            <rect x="24" y="10" width="60" height="20" rx="6" fill="#7db9ff"/>
+            <circle cx="36" cy="46" r="6" fill="#333"/>
+            <circle cx="84" cy="46" r="6" fill="#333"/>
+          </svg>
+        </div>
+        <h2>Compacto Económico</h2>
+        <p class="small">Perfecto para ciudad y práctica. 4 puertas, bajo consumo.</p>
+        <table>
+          <tr><th>Potencia</th><td>90 CV</td></tr>
+          <tr><th>Consumo</th><td>5 L/100km</td></tr>
+          <tr><th>Precio</th><td>€12.000</td></tr>
+        </table>
+      </article>
+
+      <!-- Coche 2 -->
+      <article class="card">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="imagen coche deportivo">
+            <rect x="6" y="18" width="108" height="24" rx="6" fill="#ff9f80"/>
+            <rect x="30" y="6" width="60" height="18" rx="8" fill="#ff9f80"/>
+            <circle cx="36" cy="46" r="6" fill="#222"/>
+            <circle cx="84" cy="46" r="6" fill="#222"/>
+          </svg>
+        </div>
+        <h2>Deportivo</h2>
+        <p class="small">Diseño agresivo y buen rendimiento. 2 puertas.</p>
+        <table>
+          <tr><th>Potencia</th><td>220 CV</td></tr>
+          <tr><th>Consumo</th><td>8 L/100km</td></tr>
+          <tr><th>Precio</th><td>€32.000</td></tr>
+        </table>
+      </article>
+
+      <!-- Coche 3 -->
+      <article class="card">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="imagen coche SUV">
+            <rect x="6" y="16" width="108" height="26" rx="6" fill="#b8e994"/>
+            <rect x="18" y="6" width="84" height="18" rx="6" fill="#b8e994"/>
+            <circle cx="36" cy="46" r="6" fill="#222"/>
+            <circle cx="84" cy="46" r="6" fill="#222"/>
+          </svg>
+        </div>
+        <h2>SUV Familiar</h2>
+        <p class="small">Espacioso, ideal para familia y viajes. 5 plazas.</p>
+        <table>
+          <tr><th>Potencia</th><td>160 CV</td></tr>
+          <tr><th>Consumo</th><td>7 L/100km</td></tr>
+          <tr><th>Precio</th><td>€25.000</td></tr>
+        </table>
+      </article>
+
+      <!-- Coche 4 -->
+      <article class="card">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="imagen coche electrico">
+            <rect x="6" y="18" width="108" height="24" rx="6" fill="#d2b4ff"/>
+            <rect x="28" y="8" width="64" height="16" rx="6" fill="#d2b4ff"/>
+            <circle cx="36" cy="46" r="6" fill="#111"/>
+            <circle cx="84" cy="46" r="6" fill="#111"/>
+            <!-- pequeño icono de rayo -->
+            <polygon points="78,18 72,32 82,32 70,50 82,34 74,34" fill="#fff" opacity="0.9"/>
+          </svg>
+        </div>
+        <h2>Eléctrico</h2>
+        <p class="small">Cero emisiones. Autonomía aproximada 300 km.</p>
+        <table>
+          <tr><th>Potencia</th><td>150 CV</td></tr>
+          <tr><th>Autonomía</th><td>~300 km</td></tr>
+          <tr><th>Precio</th><td>€28.000</td></tr>
+        </table>
+      </article>
+
+    </section>
+
+    <section style="margin-top:18px">
+      <h2>Cómo usar esta página (sugerencias para la clase)</h2>
+      <ul>
+        <li>Explica la estructura: &lt;header&gt;, &lt;main&gt;, &lt;article&gt;.</li>
+        <li>Repasa cómo se usan las tablas para mostrar especificaciones.</li>
+        <li>Comenta accesibilidad: atributos <code>aria-label</code> en las imágenes SVG.</li>
+        <li>Actividad: pedir a los alumnos que añadan un nuevo coche duplicando una tarjeta.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    Hecho para la clase — demo simple en HTML
+  </footer>
+</body>
+</html>
